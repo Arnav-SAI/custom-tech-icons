@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Custom Tech Icons</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <!-- Poppins font from Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
@@ -41,7 +41,6 @@
               type="text"
               id="searchInput"
               placeholder="Search for icons..."
-              onkeyup="filterIcons()"
             />
             <button id="clearSearch" class="clear-button">
               <i class="fas fa-times"></i>
@@ -98,26 +97,6 @@
       </div>
     </footer>
 
-    <script src="/scripts.js"></script>
-    <script>
-      // Add clear search functionality
-      document.getElementById('clearSearch').addEventListener('click', function() {
-        document.getElementById('searchInput').value = '';
-        filterIcons();
-      });
-      
-      // For demo purposes, update icon count
-      function updateIconCount(count) {
-        document.getElementById('iconCount').textContent = count + ' icons';
-      }
-      
-      // This would be in your main scripts.js or could be added here
-      function filterIcons() {
-        // Your filtering logic here
-        // For demo, we'll just update the count
-        const visibleIcons = document.querySelectorAll('.icon-item:not(.hidden)').length;
-        updateIconCount(visibleIcons);
-      }
-    </script>
+    <script src="scripts.js"></script>
   </body>
 </html>
