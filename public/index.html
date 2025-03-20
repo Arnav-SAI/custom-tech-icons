@@ -7,51 +7,117 @@
     <link rel="stylesheet" href="/styles.css" />
     <!-- Poppins font from Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
   <body>
-    <main>
-      <section class="title-section">
-        <h1>
-          <a
-            href="https://github.com/Arnav-SAI/custom-tech-icons"
-            target="_blank"
-            >Custom Tech Icons</a
-          >
-        </h1>
-      </section>
-      <section class="controls">
-        <div class="search-bar">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Search icons..."
-            onkeyup="filterIcons()"
-          />
-        </div>
-      </section>
-      <section class="api-info">
-        <h2>API Usage</h2>
-        <div class="api-example">
-          <p>Endpoint: <code>https://custom-tech-icons.vercel.app/icons/"name of icon"</code></p>
-          <p>
-            Try it:
-            <a
-              href="https://custom-tech-icons.vercel.app/icons/JavaScript.svg"
-              target="_blank"
-              class="api-link"
-            >
-              JavaScript Light
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <h1>Custom Tech Icons</h1>
+          </div>
+          <div class="nav-links">
+            <a href="https://github.com/Arnav-SAI/custom-tech-icons" target="_blank" class="github-link">
+              <i class="fab fa-github"></i>
             </a>
-          </p>
+          </div>
         </div>
-      </section>
-      <section class="icon-grid" id="icon-list">
-        <!-- Icons will be loaded here -->
-      </section>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="search-section">
+          <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search for icons..."
+              onkeyup="filterIcons()"
+            />
+            <button id="clearSearch" class="clear-button">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </section>
+
+        <section class="api-section">
+          <div class="section-header">
+            <h2>API Usage</h2>
+          </div>
+          <div class="api-card">
+            <div class="api-details">
+              <div class="endpoint">
+                <span class="label">Endpoint:</span>
+                <code>https://custom-tech-icons.vercel.app/icons/"name of icon"</code>
+              </div>
+              <div class="api-example">
+                <span class="label">Example:</span>
+                <a
+                  href="https://custom-tech-icons.vercel.app/icons/JavaScript.svg"
+                  target="_blank"
+                  class="api-link"
+                >
+                  <span>Try JavaScript Icon</span>
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="icons-section">
+          <div class="section-header">
+            <h2>Available Icons</h2>
+            <span class="icon-count" id="iconCount">0 icons</span>
+          </div>
+          <div class="icon-grid" id="icon-list">
+            <!-- Icons will be loaded here by JavaScript -->
+          </div>
+        </section>
+      </div>
     </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <p>© 2025 Custom Tech Icons</p>
+          <a href="https://github.com/Arnav-SAI/custom-tech-icons" target="_blank" class="github-link">
+            <i class="fab fa-github"></i>
+            <span>Visit on GitHub</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
     <script src="/scripts.js"></script>
+    <script>
+      // Add clear search functionality
+      document.getElementById('clearSearch').addEventListener('click', function() {
+        document.getElementById('searchInput').value = '';
+        filterIcons();
+      });
+      
+      // For demo purposes, update icon count
+      function updateIconCount(count) {
+        document.getElementById('iconCount').textContent = count + ' icons';
+      }
+      
+      // This would be in your main scripts.js or could be added here
+      function filterIcons() {
+        // Your filtering logic here
+        // For demo, we'll just update the count
+        const visibleIcons = document.querySelectorAll('.icon-item:not(.hidden)').length;
+        updateIconCount(visibleIcons);
+      }
+    </script>
   </body>
 </html>
