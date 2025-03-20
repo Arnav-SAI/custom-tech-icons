@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Tech Icons</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section class="title-section">
+        <h1>
+          <a
+            href="https://github.com/Arnav-SAI/custom-tech-icons"
+            target="_blank"
+            >Custom Tech Icons</a
+          >
+        </h1>
+      </section>
+      <section class="controls">
+        <div class="search-bar">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search icons..."
+            onkeyup="filterIcons()"
+          />
+        </div>
+      </section>
+      <section class="api-info">
+        <p>
+          Use the API endpoint: <code>/api/icons?i=iconname&theme=light</code>
+        </p>
+        <p>
+          Example:
+          <a href="/api/icons?i=JavaScript&theme=light" target="_blank"
+            >JavaScript Light</a
+          >
+        </p>
+      </section>
+      <section class="icon-grid" id="icon-list">
+        <!-- Icons will be loaded here -->
+      </section>
+    </main>
+    <script src="/scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles for the body */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f7f9fc;
+  color: #2d3748;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Main content container */
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Title section with GitHub link */
+.title-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.title-section h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.title-section a {
+  color: #5a67d8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.title-section a:hover {
+  color: #434190;
+  text-decoration: underline;
+}
+
+/* Controls section (search bar) */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Search bar styles */
+.search-bar {
+  flex: 1;
+  max-width: 300px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 20px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  background-color: #ffffff;
+  color: #2d3748;
+}
+
+.search-bar input:focus {
+  border-color: #5a67d8;
+}
+
+/* API info section */
+.api-info {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.api-info p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.api-info code {
+  background-color: #edf2f7;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: "Courier New", Courier, monospace;
+  color: #e53e3e;
+}
+
+.api-info a {
+  color: #5a67d8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.api-info a:hover {
+  text-decoration: underline;
+}
+
+/* Icon grid styles */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+/* Icon item styles */
+.icon-item {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.icon-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.icon-item p {
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+
+  .icon-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .title-section h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-item {
+    padding: 10px;
+  }
+
+  .icon-item img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .icon-item p {
+    font-size: 0.8rem;
+  }
+
+  .title-section h1 {
+    font-size: 1.5rem;
+  }
+}
