@@ -35,12 +35,13 @@ const iconNames = [
     });
   }
   
-  // Load and display icons
+  // Load and display all icons at once
   async function loadIcons() {
     const iconListDiv = document.getElementById('icon-list');
     iconListDiv.innerHTML = ''; // Clear existing icons
   
-    for (const icon of iconNames) {
+    // Create an array of promises for all icons
+    const iconPromises = iconNames.map(async (icon) => {
       const iconDiv = document.createElement('div');
       iconDiv.className = 'icon-item';
       iconDiv.setAttribute('data-name', icon.toLowerCase());
@@ -62,8 +63,12 @@ const iconNames = [
   
       iconDiv.appendChild(lightImg);
       iconDiv.appendChild(lightLabel);
-      iconListDiv.appendChild(iconDiv);
-    }
+      return iconDiv;
+    });
+  
+    // Wait for all icons to be processed, then append them at once
+    const iconElements = await Promise.all(iconPromises);
+    iconElements.forEach((iconDiv) => iconListDiv.appendChild(iconDiv));
   }
   
   // Filter icons based on search input
