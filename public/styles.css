@@ -5,211 +5,339 @@
   box-sizing: border-box;
 }
 
-/* Base styles for the body */
+/* Base styles */
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #1a1a1a; /* Dark background */
-  color: #e0e0e0; /* Light text */
+  background-color: #121212;
+  color: #f5f5f5;
   line-height: 1.6;
-  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Main content container */
-main {
+.container {
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Title section with GitHub link */
-.title-section {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.title-section h1 {
-  font-size: 2.5rem;
+/* Typography */
+h1, h2, h3 {
   font-weight: 600;
 }
 
-.title-section a {
-  color: #7a86ff; /* Lighter blue for dark theme */
-  text-decoration: none;
-  transition: color 0.3s ease;
+h1 {
+  font-size: 1.8rem;
 }
 
-.title-section a:hover {
-  color: #a8b1ff;
-  text-decoration: underline;
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-/* Controls section (search bar) */
-.controls {
+/* Header */
+header {
+  background-color: #1c1c1c;
+  padding: 20px 0;
+  border-bottom: 1px solid #2a2a2a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.github-link {
+  color: #f5f5f5;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.github-link:hover {
+  color: #7A86FF;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  padding: 40px 0;
+}
+
+/* Search section */
+.search-section {
+  margin-bottom: 40px;
+}
+
+.search-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+  font-size: 1rem;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 16px 20px 16px 50px;
+  border: none;
+  border-radius: 50px;
+  background-color: #2d2d2d;
+  color: #f5f5f5;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-container input:focus {
+  outline: none;
+  background-color: #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.search-container input::placeholder {
+  color: #888;
+}
+
+.clear-button {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.clear-button:hover {
+  opacity: 1;
+}
+
+/* Section styling */
+.section-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
 
-/* Search bar styles */
-.search-bar {
-  flex: 1;
-  max-width: 300px;
+.api-section, .icons-section {
+  margin-bottom: 40px;
 }
 
-.search-bar input {
-  width: 100%;
-  padding: 10px 15px;
-  border: 2px solid #333; /* Darker border */
-  border-radius: 20px;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.3s ease;
-  background-color: #2a2a2a; /* Dark input background */
-  color: #e0e0e0; /* Light text */
+.icon-count {
+  color: #888;
+  font-size: 0.9rem;
 }
 
-.search-bar input:focus {
-  border-color: #7a86ff; /* Blue focus */
-}
-
-.search-bar input::placeholder {
-  color: #888; /* Lighter placeholder */
-}
-
-/* API info section */
-.api-info {
-  background-color: #252525; /* Dark grey background */
-  padding: 20px;
+/* API section */
+.api-card {
+  background-color: #1e1e1e;
   border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  text-align: center;
-  border: 1px solid #333; /* Subtle border */
+  padding: 24px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  border: 1px solid #2a2a2a;
 }
 
-.api-info h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #e0e0e0; /* Light text */
-  margin-bottom: 15px;
-}
-
-.api-example {
+.api-details {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
 }
 
-.api-info p {
-  margin: 0;
-  font-size: 1rem;
-  color: #b0b0b0; /* Lighter grey text */
+.endpoint, .api-example {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.api-info code {
-  background-color: #1f1f1f; /* Slightly darker background */
-  padding: 4px 8px;
+.label {
+  color: #888;
+  font-weight: 500;
+  min-width: 80px;
+}
+
+.api-card code {
+  background-color: #252525;
+  padding: 8px 12px;
   border-radius: 6px;
-  font-family: "Poppins", sans-serif; /* Changed to Poppins */
-  color: #ffffff; /* White text instead of red */
-  font-size: 0.95rem;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  font-family: "Poppins", sans-serif;
+  color: #7A86FF;
+  font-size: 0.9rem;
 }
 
 .api-link {
-  display: inline-block;
-  color: #7a86ff; /* Soft blue */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #f5f5f5;
+  background-color: #7A86FF;
   text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
   font-weight: 500;
-  padding: 6px 12px;
-  border-radius: 6px;
-  background-color: #2a2a2a; /* Dark button-like background */
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 
 .api-link:hover {
-  color: #fff;
-  background-color: #7a86ff; /* Blue on hover */
-  text-decoration: none;
-  transform: translateY(-2px); /* Slight lift effect */
+  background-color: #8D97FF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(122, 134, 255, 0.3);
 }
 
-/* Icon grid styles */
+/* Icon grid */
 .icon-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
 }
 
-/* Icon item styles */
 .icon-item {
-  background-color: #333; /* Grey tiles */
-  padding: 15px;
-  border-radius: 8px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 20px 15px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.icon-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-color: #3a3a3a;
 }
 
 .icon-item img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
-  margin-bottom: 8px;
+  margin: 0 auto 15px;
+  transition: transform 0.3s;
+}
+
+.icon-item:hover img {
+  transform: scale(1.1);
 }
 
 .icon-item p {
   font-size: 0.9rem;
-  color: #b0b0b0; /* Lighter grey text */
+  color: #ccc;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  background-color: #1c1c1c;
+  padding: 20px 0;
+  border-top: 1px solid #2a2a2a;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content p {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+footer .github-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+
+footer .github-link span {
+  font-size: 0.9rem;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .controls {
+  .api-details {
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
   }
-
-  .search-bar {
-    max-width: 100%;
+  
+  .endpoint, .api-example {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
-
+  
+  .label {
+    min-width: auto;
+  }
+  
   .icon-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   }
-
-  .title-section h1 {
-    font-size: 2rem;
+  
+  .api-card code {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: block;
   }
 }
 
 @media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .icon-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+  
   .icon-item {
-    padding: 10px;
+    padding: 15px 10px;
   }
-
+  
   .icon-item img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .icon-item p {
-    font-size: 0.8rem;
-  }
-
-  .title-section h1 {
-    font-size: 1.5rem;
-  }
-
-  .api-info h2 {
-    font-size: 1.25rem;
-  }
-
-  .api-info p {
-    font-size: 0.9rem;
-  }
-
-  .api-link {
-    padding: 5px 10px;
+    width: 70px;
+    height: 70px;
   }
 }
