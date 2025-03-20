@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Custom Tech Icons</title>
     <link rel="stylesheet" href="/styles.css" />
+    <!-- Poppins font from Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
@@ -32,15 +33,20 @@
         </div>
       </section>
       <section class="api-info">
-        <p>
-          Use the API endpoint: <code>/api/icons?i=iconname&theme=light</code>
-        </p>
-        <p>
-          Example:
-          <a href="/api/icons?i=JavaScript&theme=light" target="_blank"
-            >JavaScript Light</a
-          >
-        </p>
+        <h2>API Usage</h2>
+        <div class="api-example">
+          <p>Endpoint: <code>/api/icons?i=iconname&theme=light</code></p>
+          <p>
+            Try it:
+            <a
+              href="/api/icons?i=JavaScript&theme=light"
+              target="_blank"
+              class="api-link"
+            >
+              JavaScript Light
+            </a>
+          </p>
+        </div>
       </section>
       <section class="icon-grid" id="icon-list">
         <!-- Icons will be loaded here -->
